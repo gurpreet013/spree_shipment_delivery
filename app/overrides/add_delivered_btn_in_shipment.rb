@@ -6,6 +6,5 @@ Deface::Override.new(:virtual_path => 'spree/admin/orders/_shipment',
       <%= link_to 'Delivered', 'javascript:;', class: 'deliver pull-right btn btn-success', data: { 'shipment-number' => shipment.number } %>
       <div class='clearfix'></div>
     <% end %>
-    <%debugger%>
   ")
 
