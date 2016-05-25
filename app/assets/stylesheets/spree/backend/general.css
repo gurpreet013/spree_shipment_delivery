@@ -1,0 +1,6 @@
+.label-delivered {
+  background-color: #7DB942;
+}
+.label-delivered a {
+  color: white !important;
+}

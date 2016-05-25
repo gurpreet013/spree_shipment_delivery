@@ -1,8 +1,7 @@
-Spree::ShipmentController.class_eval do
-
-  before_action :find_and_update_shipment, only: [:deliver]
+Spree::Api::ShipmentsController.class_eval do
 
   def deliver
+    find_and_update_shipment
     unless @shipment.delivered?
       @shipment.deliver!
     end

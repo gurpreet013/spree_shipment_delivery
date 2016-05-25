@@ -6,6 +6,13 @@ Spree::Shipment.class_eval do
     event :deliver do
       transition from: :shipped, to: :delivered
     end
+    after_transition to: :delivered, do: :after_deliver
   end
+
+  private
+
+    def after_deliver
+      Spree::ShipmentHandler.factory(self).send :update_order_shipment_state
+    end
 
 end

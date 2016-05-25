@@ -5,7 +5,7 @@ ShipmentDecorator.prototype.bindEvent = function() {
   $('[data-hook=admin_shipment_form] a.deliver').on('click', function () {
     var link = $(this);
     var shipment_number = link.data('shipment-number');
-    var url = Spree.url(Spree.routes.shipments_api + '/' + shipment_number + '/ship.json');
+    var url = Spree.url(Spree.routes.shipments_api + '/' + shipment_number + '/deliver.json');
     $.ajax({
       type: 'PUT',
       url: url,
@@ -22,5 +22,5 @@ ShipmentDecorator.prototype.bindEvent = function() {
 
 $(function() {
   var sD = new ShipmentDecorator();
-  sd.bindEvent();
+  sD.bindEvent();
 })
